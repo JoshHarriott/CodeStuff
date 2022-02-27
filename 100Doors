@@ -1,0 +1,30 @@
+import java.lang.reflect.Array;
+
+public class shortdoors {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		boolean[] doors = new boolean[100];
+		
+		for (int i = 0; i<doors.length; i++) {             
+			for (int j = 0; j<doors.length; j++) {								
+				if ((j+1)%(i+1) == 0) {													
+					if (doors[j] == true) {									
+						Array.setBoolean(doors, j, false);						
+					}															
+					else if (doors[j] == false) {								
+						Array.setBoolean(doors, j, true);	}
+						
+					}
+				}
+			}
+		
+		for (int l = 0; l<doors.length; l++) {
+			if (doors[l] == true) {
+				System.out.println("Door " + (l+1) + " is open"); }
+			else if (doors[l] == false) {
+				System.out.println("Door " + (l+1) + " is closed"); }
+		}
+	}
+}
